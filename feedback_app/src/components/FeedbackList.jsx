@@ -1,11 +1,14 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
 import PropTypes from 'prop-types'
+import Card from './shared/Card'
 
 const FeedbackList = ({feedback, handleDelete}) => {
  
  if (!feedback || feedback.length === 0) {
-  return <p>No Feedback Yet! </p>
+  return (<Card>
+    No Feedback Yet! 
+    </Card>)
  }
   return (
     <div className='feedback-list'>
