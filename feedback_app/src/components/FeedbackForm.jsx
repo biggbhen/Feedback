@@ -25,7 +25,7 @@ const FeedbackForm = () => {
     <Card>
      <form>
       <h2>How would you rate our services?</h2>
-       <RatingSelect />
+       <RatingSelect select={(rating)=>setRating(rating)} />
       <div className="input-group">
        <input type="text" placeholder='Write a review' value={text} onChange={handleTextChange}/>
        <Button type='submit' isDisabled={btnDisabled}>Send</Button>
