@@ -9,7 +9,8 @@ import FeedbackData from './data/FeedbackData';
 function App() {
 	const [feedback, setFeedback] = useState(FeedbackData);
 	const addFeedback = (newFeedBack) => {
-		console.log(newFeedBack);
+		newFeedBack.id = uuidv4();
+		setFeedback([newFeedBack, ...feedback]);
 	};
 	const deleteFeedback = (id) => {
 		if (window.confirm('Are you sure you want to delete?')) {
