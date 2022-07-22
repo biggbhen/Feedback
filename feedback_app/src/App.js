@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import AboutIconLink from './components/AboutIconLink';
 import FeedbackForm from './components/FeedbackForm';
 import FeedbackList from './components/FeedbackList';
 import FeedbackStats from './components/FeedbackStats';
@@ -41,6 +42,7 @@ function App() {
 
 					<Route path='/about' element={<About />} />
 				</Routes>
+				<AboutIconLink />
 			</div>
 		</Router>
 	);
