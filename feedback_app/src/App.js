@@ -8,6 +8,7 @@ import FeedbackStats from './components/FeedbackStats';
 import Header from './components/Header';
 import FeedbackData from './data/FeedbackData';
 import About from './pages/About';
+import { FeedbackProvider } from '../src/context/FeedbackContext';
 
 function App() {
 	const [feedback, setFeedback] = useState(FeedbackData);
@@ -15,36 +16,30 @@ function App() {
 		newFeedBack.id = uuidv4();
 		setFeedback([newFeedBack, ...feedback]);
 	};
-	const deleteFeedback = (id) => {
-		if (window.confirm('Are you sure you want to delete?')) {
-			setFeedback(feedback.filter((item) => item.id !== id));
-		}
-	};
 
 	return (
-		<Router>
-			<Header />
-			<div className='container'>
-				<Routes>
-					<Route
-						exact
-						path='/'
-						element={
-							<>
-								<FeedbackForm handleAdd={addFeedback} />
-								<FeedbackStats feedback={feedback} />
-								<FeedbackList
-									feedback={feedback}
-									handleDelete={deleteFeedback}
-								/>
-							</>
-						}></Route>
+		<FeedbackProvider>
+			<Router>
+				<Header />
+				<div className='container'>
+					<Routes>
+						<Route
+							exact
+							path='/'
+							element={
+								<>
+									<FeedbackForm handleAdd={addFeedback} />
+									<FeedbackStats />
+									<FeedbackList />
+								</>
+							}></Route>
 
-					<Route path='/about' element={<About />} />
-				</Routes>
-				<AboutIconLink />
-			</div>
-		</Router>
+						<Route path='/about' element={<About />} />
+					</Routes>
+					<AboutIconLink />
+				</div>
+			</Router>
+		</FeedbackProvider>
 	);
 }
 
