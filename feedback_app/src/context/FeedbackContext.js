@@ -1,32 +1,16 @@
 import { createContext, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+// import { v4 as uuidv4 } from 'uuid';
 
 const FeedbackContext = createContext();
 export const FeedbackProvider = ({ children }) => {
-	const [feedback, setFeedback] = useState([
-		{
-			id: 1,
-			rating: 10,
-			text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis culpa quaerat quis soluta necessitatibus, esse aspernatur modi nobis nisi sunt maiores quasi rem quam voluptates labore unde tempora quos quia?',
-		},
-		{
-			id: 2,
-			rating: 6,
-			text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis culpa quaerat quis soluta necessitatibus, esse aspernatur modi nobis nisi sunt maiores quasi rem quam voluptates labore unde tempora quos quia?',
-		},
-		{
-			id: 3,
-			rating: 5,
-			text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis culpa quaerat quis soluta necessitatibus, esse aspernatur modi nobis nisi sunt maiores quasi rem quam voluptates labore unde tempora quos quia?',
-		},
-	]);
+	const [feedback, setFeedback] = useState([]);
 	const [feedbackEdit, setFeedbackEdit] = useState({
 		item: {},
 		edit: false,
 	});
 	// addFeedback
 	const addFeedback = (newFeedBack) => {
-		newFeedBack.id = uuidv4();
+		// newFeedBack.id = uuidv4();
 		setFeedback([newFeedBack, ...feedback]);
 	};
 	// deleteFeedback
