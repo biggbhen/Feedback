@@ -18,7 +18,7 @@ const Header = ({text, bgColor, textColor}) => {
   )
 }
 Header.defaultProps = {
-  text: 'FeedBack UI',
+  text: 'Custom FeedBack App',
   bgColor: 'rgba(0,0,0,0.4)',
   textColor: '#ff6a95'
 }

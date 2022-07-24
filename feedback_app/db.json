@@ -11,10 +11,9 @@
       "text": "This is feedback item 1 coming from backend"
     },
     {
-      "rating": 8,
-      "text": "this is jason mcdonnald",
-      "id": "3"
+      "text": "used json.server to mock my api",
+      "rating": 10,
+      "id": "2JCpfgI"
     }
-    
   ]
 }
