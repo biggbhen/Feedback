@@ -52,6 +52,7 @@ export const FeedbackProvider = ({ children }) => {
 			value={{
 				feedback,
 				feedbackEdit,
+				isloading,
 				deleteFeedback,
 				addFeedback,
 				editFeedback,

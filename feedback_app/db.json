@@ -11,7 +11,7 @@
       "text": "This is feedback item 1 coming from backend"
     },
     {
-      "rating": "8",
+      "rating": 8,
       "text": "this is jason mcdonnald",
       "id": "3"
     }
