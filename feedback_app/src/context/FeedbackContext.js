@@ -44,7 +44,9 @@ export const FeedbackProvider = ({ children }) => {
 	};
 	// update data
 	const updateFeedback = (id, updItem) => {
-		setFeedback((item) => (item.id === id ? { ...item, ...updItem } : item));
+		setFeedback(
+			feedback.map((item) => (item.id === id ? { ...item, ...updItem } : item))
+		);
 	};
 	return (
 		<FeedbackContext.Provider
